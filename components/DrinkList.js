@@ -3,7 +3,7 @@ import {
 	StyleSheet,
 	Text,
 	View,
-	ScrollView,
+	FlatList,
 	ActivityIndicator
 } from "react-native";
 import Drink from "./Drink";
@@ -62,38 +62,52 @@ export default class DrinkList extends Component {
 		super();
 		this.state = {
 			drinks: [],
-			isLoading: true
+			isLoading: true,
+			error: null,
+			loadingMore: false
 		};
 	}
-	async componentDidMount() {
+	componentDidMount() {
+		this.fetchDrinks();
+	}
+
+	fetchDrinks = async () => {
 		try {
-			// const { data } = await axios.get(API_ENDPOINT);
-			// const { drinks } = data;
-			// this.setState({ drinks });
+			const { data } = await axios.get(API_ENDPOINT);
+			const { drinks } = data;
 			this.setState({
-				drinks: dummyData,
+				drinks: [...this.state.drinks, ...drinks],
 				isLoading: false
 			});
+			
 		} catch (error) {
-			console.error(error);
+			this.setState({ error, isLoading: false });
 		}
-	}
+	};
+	handleLoadMoreData = () => {
+		this.setState({
+			loadingMore: true
+		}, () => {
+			this.fetchDrinks();
+		});
+	};
 	render() {
 		const { drinks, isLoading } = this.state;
-		if (isLoading) {
-			return (
-				<View style={styles.container}>
-					<ActivityIndicator size="large" />
-				</View>
-			);
-		} else {
-			return (
-				<ScrollView style={styles.container}>
-					{drinks.map(drink => (
-						<Drink key={drink.idDrink} drink={drink} />
-					))}
-				</ScrollView>
-			);
-		}
+		return isLoading ? (
+			<View style={styles.container}>
+				<ActivityIndicator animating size="large" />
+			</View>
+		) : (
+			<View style={styles.container}>
+				<FlatList
+					data={drinks}
+					renderItem={({ item }) => <Drink drink={item} />}
+					keyExtractor={item => item.idDrink}
+					onEndReached={this.handleLoadMoreData}
+					onEndReachedThreshold={0.5}
+					initialNumToRender={10}
+				/>
+			</View>
+		);
 	}
 }

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 
 const ingredients = ["Tequilla", "Apple Cider"];
 
@@ -40,7 +40,7 @@ export default class Drink extends Component {
 			strDrinkThumb: imgURL
 		} = this.props.drink;
 		return (
-			<View style={styles.drinkContainer}>
+			<TouchableOpacity style={styles.drinkContainer}>
 				<View style={styles.drinkInfoContainer}>
 					<View style={styles.ingredientsContainer}>
 						<Text style={styles.drinkTitle}>
@@ -65,7 +65,7 @@ export default class Drink extends Component {
 						}}
 					/>
 				</View>
-			</View>
+			</TouchableOpacity>
 		);
 	}
 }
