@@ -1,17 +1,36 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
 
+const ingredients = ["Tequilla", "Apple Cider"];
+
 const styles = StyleSheet.create({
-	container: {
+	drinkContainer: {
 		flex: 1,
-		height: 175,
+		height: 170,
 		width: 350,
 		flexDirection: "row",
 		justifyContent: "space-between",
 		backgroundColor: "white",
-        margin: 10,
-        padding: 10
-	}
+		margin: 10,
+		padding: 15
+    },
+    drinkInfoContainer: {
+        flex: 1,
+        flexDirection: "column",
+        justifyContent: "center"
+    },
+    drinkTitle: {
+        fontSize: 20,
+        fontWeight: "bold",
+        color: "#615c65"
+    },
+    ingredientsContainer: {
+        flex: 1,
+    },
+    ingredientText: {
+        fontWeight: 'bold',
+        color: '#7d8b99'
+    }
 });
 
 export default class Drink extends Component {
@@ -21,16 +40,29 @@ export default class Drink extends Component {
 			strDrinkThumb: imgURL
 		} = this.props.drink;
 		return (
-			<View style={styles.container}>
-				<View style={{ flex: 1, flexDirection: "row", justifyContent: "center" }}>
-					<Text style={{ fontSize: 20, fontWeight: "bold", color: '#615c65' }}>
-						{cocktailName}
-					</Text>
+			<View style={styles.drinkContainer}>
+				<View style={styles.drinkInfoContainer}>
+					<View style={styles.ingredientsContainer}>
+						<Text style={styles.drinkTitle}>
+							{cocktailName}
+						</Text>
+					</View>
+                    <View style={styles.ingredientsContainer}>
+                        {ingredients.map((ingredient, index) => (
+                            <Text key={index} style={styles.ingredientText}>
+                            • {ingredient}
+                            </Text>
+                        ))}
+					</View>
 				</View>
 				<View>
 					<Image
 						source={{ uri: imgURL }}
-						style={{ width: 130, height: 130 }}
+						style={{
+							width: 140,
+							height: 140,
+							resizeMode: "contain"
+						}}
 					/>
 				</View>
 			</View>

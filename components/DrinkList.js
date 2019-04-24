@@ -1,11 +1,17 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, ScrollView } from "react-native";
+import {
+	StyleSheet,
+	Text,
+	View,
+	ScrollView,
+	ActivityIndicator
+} from "react-native";
 import Drink from "./Drink";
 import axios from "axios";
 
 const styles = StyleSheet.create({
 	container: {
-		flex: 1,
+		flex: 1
 	}
 });
 
@@ -55,7 +61,8 @@ export default class DrinkList extends Component {
 	constructor() {
 		super();
 		this.state = {
-			drinks: []
+			drinks: [],
+			isLoading: true
 		};
 	}
 	async componentDidMount() {
@@ -63,24 +70,30 @@ export default class DrinkList extends Component {
 			// const { data } = await axios.get(API_ENDPOINT);
 			// const { drinks } = data;
 			// this.setState({ drinks });
-			this.setState({ drinks: dummyData});
+			this.setState({
+				drinks: dummyData,
+				isLoading: false
+			});
 		} catch (error) {
 			console.error(error);
 		}
 	}
 	render() {
-		const { drinks } = this.state;
-		return (
-			<ScrollView style={styles.container}>
-				{/* <Text>Open up App.js to start working on your app!</Text> */}
-				{drinks.length > 0 ? (
-					drinks.map(drink => (
+		const { drinks, isLoading } = this.state;
+		if (isLoading) {
+			return (
+				<View style={styles.container}>
+					<ActivityIndicator size="large" />
+				</View>
+			);
+		} else {
+			return (
+				<ScrollView style={styles.container}>
+					{drinks.map(drink => (
 						<Drink key={drink.idDrink} drink={drink} />
-					))
-				) : (
-					<Text>Loading</Text>
-				)}
-			</ScrollView>
-		);
+					))}
+				</ScrollView>
+			);
+		}
 	}
 }
