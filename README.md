@@ -4,6 +4,8 @@
 
 Make sure that you have `Node` installed on your local machine. 
 
+**Fork** and clone this repository to your machine. https://github.com/topkoong/RandomDrinks
+
 ### Installing Node
 
 Download the Node.js source code or a pre-built installer for your platform
@@ -33,7 +35,7 @@ Assuming that you already have **`Node 10+`** installed, you can use npm to inst
 npm install -g expo-cli
 ```
 
-**Fork** and clone this repository to your machine. https://github.com/topkoong/RandomDrinks
+
 
 ### Install the dependencies in the local node_modules folder
 By default, npm install will install all modules listed as dependencies in package.json
