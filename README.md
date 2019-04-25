@@ -2,16 +2,6 @@
 
 ## Setup
 
-**Fork** and clone this repository to your machine. https://github.com/topkoong/RandomDrinks
-
-### Install the dependencies in the local node_modules folder
-By default, npm install will install all modules listed as dependencies in package.json
-
-```bash
-
-npm install 
-```
-
 Make sure that you have `Node` installed on your local machine. 
 
 ### Installing Node
@@ -41,6 +31,24 @@ Assuming that you already have `Node 10+` installed, you can use npm to install 
 ```bash
 
 npm install -g expo-cli
+```
+
+**Fork** and clone this repository to your machine. https://github.com/topkoong/RandomDrinks
+
+### Install the dependencies in the local node_modules folder
+By default, npm install will install all modules listed as dependencies in package.json
+You'll need to open a new terminal (command prompt) for the node and npm command line tools to be on your PATH. Execute the following to install dependencies on your local machine from your terminal if you're on a Mac:
+
+```bash
+
+npm install 
+```
+
+## Getting started
+Execute the following to run the app on your local machine from your terminal if you're on a Mac:
+```bash
+
+npm start
 ```
 
 ## Running your React Native application
