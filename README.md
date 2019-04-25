@@ -27,7 +27,7 @@ $ npm --version
 6.9.0
 ```
 
-Assuming that you already have `Node 10+` installed, you can use npm to install the Expo CLI command line utility:
+Assuming that you already have **`Node 10+`** installed, you can use npm to install the Expo CLI command line utility:
 ```bash
 
 npm install -g expo-cli
@@ -53,7 +53,17 @@ npm start
 
 ## Running your React Native application
 
-Install the Expo client app on your iOS `(App Store)` or Android phone `(Google Play)` and connect to the same wireless network as your computer. On Android, use the Expo app to scan the QR code from your terminal to open your project. On iOS, follow on-screen instructions to get a link.
+Install the Expo client app on your iOS **`(App Store)`** or Android phone **`(Google Play)`** and connect to the same wireless network as your computer. On Android, use the Expo app to scan the QR code from your terminal to open your project. On iOS, follow on-screen instructions to get a link.
 
 
 For each row of the list it will display the Cocktail name and photo
+
+## A picture from Google Pixel 3 XL
+![alt text](https://i.ibb.co/kMcm99k/IMG-5129.jpg "Picture from Google Pixel 3 XL")
+
+## A sreenshot from Google Pixel 3 XL
+![alt text](https://i.ibb.co/6rqRcf2/screenshot.png "Screenshot from Google Pixel 3 XL")
+
+## A sreenrecord from Google Pixel 3 XL
+![alt text](https://media.giphy.com/media/MCL9uQ04J9OhLE3MGk/giphy.gif "Screenrecord from Google Pixel 3 XL")
+
