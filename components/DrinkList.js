@@ -28,7 +28,7 @@ export default class DrinkList extends Component {
 		super();
 		this.state = {
 			drinks: [],
-			isLoading: true,
+			isLoading: true, // isLoading - to show/hide ActivityIndicator  
 			error: null,
 			loadingMore: false
 		};
@@ -37,7 +37,7 @@ export default class DrinkList extends Component {
 	// componentDidMount() is invoked immediately after a component is mounted (inserted into the tree).
 	// Initialization that requires DOM nodes should go here. If you need to load data from a remote endpoint, 
 	// this is a good place to instantiate the network request.
-	
+
 	componentDidMount() {
 		this.fetchDrinks();
 	}
@@ -59,6 +59,7 @@ export default class DrinkList extends Component {
 
 	// Handles infinite scroll list using the FlatList component
 	// For application performance, it’s important to not load or display data the user isn’t looking at yet.
+	
 	handleLoadMoreData = () => {
 		this.setState(
 			{
