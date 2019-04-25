@@ -59,10 +59,11 @@ Install the Expo client app on your iOS **`(App Store)`** or Android phone **`(G
 For each row of the list it will display the Cocktail name and photo
 
 ## A picture from Google Pixel 3 XL
-![alt text](https://i.ibb.co/kMcm99k/IMG-5129.jpg "Picture from Google Pixel 3 XL")
+![alt text](https://imgur.com/LiKukH8 "Picture from Google Pixel 3 XL")
+
 
 ## A sreenshot from Google Pixel 3 XL
-![alt text](https://i.ibb.co/6rqRcf2/screenshot.png "Screenshot from Google Pixel 3 XL")
+![alt text](https://imgur.com/7DO4Yvi "Screenshot from Google Pixel 3 XL")
 
 ## A sreenrecord from Google Pixel 3 XL
 ![alt text](https://media.giphy.com/media/MCL9uQ04J9OhLE3MGk/giphy.gif "Screenrecord from Google Pixel 3 XL")
